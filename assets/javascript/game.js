@@ -14,9 +14,28 @@ var attackStart = Math.floor(Math.random() * 10);
 var attackIncrement = 0;
 var finished = 0;
 
+//create the categories and attack button:
+function setup () {
+    $("#theForce").html("");
+    $("#theForce2").html("<h2>Character Chosen:</h2>");
+    $("#theForce3").html("<h2>Your Opponent:</h2>");
+    $("#theForce4").html("<h2>The Enemies:</h2>");
+    $("#theForce5").html("<h2>Defeated Enemies:</h2>");
+    var m = $("<button>")
+    m.attr("type","button");
+    m.attr("id","attack")
+    m.addClass("action btn btn-danger my-2")
+    m.text("Attack!")
+    $("#putButtonHere").append(m);
+    $("#attack").on("click",function() {
+        attacked();
+    })
+}
 
+//If no one selected (i.e. anakin equals 0 AND vader equals 0 AND maul equals 0) put Luke as the character selected
 $("#lukeSkywalker").on("click", function() {
     if (anakin === 0 && vader === 0 && maul === 0) {
+        setup();
         var x = $("#lukeContainer")
         var y = $("#luke")
         y.text("Luke Skywalker").append("<br> HP: ",lukeHP);
@@ -25,7 +44,7 @@ $("#lukeSkywalker").on("click", function() {
         character = 1;
         checkFunction()
     }
-
+//If someone has been selected (i.e. character equals 1), then put Luke as the opponent
     else if ((character === 1) && (maul !== 2) && (vader !== 2) && (anakin !== 2)) {
         var x = $("#lukeContainer")
         var y = $("#luke")
@@ -34,6 +53,7 @@ $("#lukeSkywalker").on("click", function() {
         luke = 2;
     }
 
+//If Anakin currently the "opponent", swap him out for Luke
     else if (anakin === 2) {
         anakin = 0;
         var x = $("#anakinContainer");
@@ -42,6 +62,8 @@ $("#lukeSkywalker").on("click", function() {
         $("#theForce3").append(y);
         luke = 2;
     }
+
+//If Maul currently the "opponent", swap him out for Luke
     else if (maul === 2) {
         maul = 0;
         var x = $("#maulContainer");
@@ -50,6 +72,8 @@ $("#lukeSkywalker").on("click", function() {
         $("#theForce3").append(y);
         luke = 2;
     }
+
+//If Vader currently the "opponent", swap him out for Luke
     else if (vader === 2) {
         vader = 0;
         var x = $("#vaderContainer");
@@ -61,8 +85,10 @@ $("#lukeSkywalker").on("click", function() {
 
 })
 
+//If no one selected (i.e. all 4 characters === 0) put Anakin as the character selected
 $("#anakinSkywalker").on("click", function() {
     if (anakin === 0 && luke === 0 && vader === 0 && maul === 0) {
+        setup();
         var x = $("#containAnakin")
         var y = $("#anakin")
         y.text("Anakin Skywalker").append("<br>HP: ",anakinHP)
@@ -72,12 +98,14 @@ $("#anakinSkywalker").on("click", function() {
         checkFunction()
     }
 
+//If someone has been selected (i.e. character equals 1), then put Anakin as the opponent
     else if ((character === 1) && (anakin !==1) && (luke !== 2) && (vader !== 2) && (maul !== 2)) {
         var x = $("#containAnakin")
         $("#theForce3").append(x);
         anakin = 2;
     }
 
+//If Luke currently the "opponent", swap him out for Anakin
     else if (luke === 2) {
         luke = 0;
         var x = $("#lukeContainer");
@@ -86,6 +114,8 @@ $("#anakinSkywalker").on("click", function() {
         $("#theForce3").append(y);
         anakin = 2;
     }
+//If Maul currently the "opponent", swap him out for Anakin
+
     else if (maul === 2) {
         maul = 0;
         var x = $("#maulContainer");
@@ -94,6 +124,7 @@ $("#anakinSkywalker").on("click", function() {
         $("#theForce3").append(y);
         anakin = 2;
     }
+//If Vader currently the "opponent", swap him out for Anakin
     else if (vader === 2) {
         vader = 0;
         var x = $("#vaderContainer");
@@ -105,8 +136,11 @@ $("#anakinSkywalker").on("click", function() {
     }
 })
 
+//If no one selected (i.e. all 4 characters === 0) put Maul as the character selected
+
 $("#darthMaul").on("click", function() {
     if (maul === 0 && luke === 0 && vader === 0 && anakin === 0) {
+        setup();
         $("#theForce").html("")
         var x = $("#maulContainer")
         var y = $("#maul")
@@ -117,13 +151,16 @@ $("#darthMaul").on("click", function() {
         checkFunction();
     }
 
+//If someone has been selected (i.e. character equals 1), then put Maul as the opponent
+
     else if ((character === 1) && (maul !== 1) && (luke !== 2) && (vader !== 2) && (anakin !== 2)) {
         var x = $("#maulContainer")
         $("#theForce3").append(x);
         maul = 2;
     }
 
-    
+//If Luke currently the "opponent", swap him out for Maul
+
     else if (luke === 2) {
             luke = 0;
             var x = $("#lukeContainer");
@@ -132,6 +169,8 @@ $("#darthMaul").on("click", function() {
             $("#theForce3").append(y);
             maul = 2;
         }
+//If Anakin currently the "opponent", swap him out for Maul
+
     else if (anakin === 2) {
             anakin = 0;
             var x = $("#containAnakin");
@@ -140,6 +179,8 @@ $("#darthMaul").on("click", function() {
             $("#theForce3").append(y);
             maul = 2;
         }
+
+//If Vader currently the "opponent", swap him out for Maul
     else if (vader === 2) {
             vader = 0;
             var x = $("#vaderContainer");
@@ -151,8 +192,11 @@ $("#darthMaul").on("click", function() {
         }
 })
 
+//If no one selected (i.e. all 4 characters === 0) put Vader as the character selected
+
 $("#darthVader").on("click", function() {
     if (vader === 0 && luke === 0 && maul === 0 && anakin === 0) {
+        setup();
         var x = $("#vaderContainer")
         var y = $("#vader")
         y.text("Darth Vader").append("<br> HP: ",vaderHP);
@@ -161,12 +205,15 @@ $("#darthVader").on("click", function() {
         character = 1;
         checkFunction()
     }
+//If someone has been selected (i.e. character equals 1), then put Vader as the opponent
 
     else if ((character === 1) && (vader !== 1) && (luke !== 2) && (maul !== 2) && (anakin !== 2)) {
         var x = $("#vaderContainer")
         $("#theForce3").append(x);
         vader = 2;
     }
+
+//If Anakin currently the "opponent", swap him out for Vader
 
     else if (anakin === 2) {
         anakin = 0;
@@ -176,6 +223,8 @@ $("#darthVader").on("click", function() {
         $("#theForce3").append(y);
         vader = 2;
     }
+//If Maul currently the "opponent", swap him out for Vader
+
     else if (maul === 2) {
         maul = 0;
         var x = $("#maulContainer");
@@ -184,6 +233,9 @@ $("#darthVader").on("click", function() {
         $("#theForce3").append(y);
         vader = 2;
     }
+
+//If Luke currently the "opponent", swap him out for Vader
+
     else if (luke === 2) {
         luke = 0;
         var x = $("#lukeContainer");
@@ -194,7 +246,10 @@ $("#darthVader").on("click", function() {
     }
 })
 
+//if XYZ character is selected as the player, then assign the other 3 to "the Enemies"
 function checkFunction ()  {
+
+    
     if (luke === 1) {
         var x = $("#containAnakin")
         var a = $("#anakin")
@@ -208,7 +263,7 @@ function checkFunction ()  {
         $("#theForce4").append(x,"<br>");
         $("#theForce4").append(y,"<br>");
         $("#theForce4").append(z,"<br>");
-        $("#theForce").html("");
+       
 
     }
 
@@ -261,14 +316,15 @@ function checkFunction ()  {
     }
 }
 
-//Attack!
-$("#attack").on("click",function() {
-    attacked();
-})
+//Attack! when the attack button is pressed...
+
+
 function attacked() {
+//check against no characters selected yet
     if (character === 0) {
         return character;
     }
+//Luke is player against Anakin--take away health from Anakin; if Anakin goes 0 or negative, put him in defeated and prompt for next
     else if (luke === 1 && anakin === 2) {
         lukeAttack+=Math.floor(Math.random() * 10)
         anakinHP-=lukeAttack
@@ -287,8 +343,8 @@ function attacked() {
             $("#announcements").html("<h2>You've Defeated Anakin Skywalker! Select your next opponent<h2>");
             checkEnd();
         }
-
-        if (anakinHP > 0) {
+//Luke is player against Anakin--take away health from Luke if Anakin is still alive; if luke goes negative or 0--loser
+if (anakinHP > 0) {
             lukeHP-=anakinAttack;
             if (lukeHP > 0) {
                 var x = $("#lukeContainer");
@@ -307,9 +363,7 @@ function attacked() {
         } else {return anakinHP}
     }
         
-        
-        
-
+//Luke is player against Vader--take away health from Vader; if Vader goes 0 or negative, put him in defeated and prompt for next
 
     else if (luke === 1 && vader === 2) {
         lukeAttack+=Math.floor(Math.random() * 10)
@@ -329,6 +383,7 @@ function attacked() {
             $("#announcements").html("<h2>You've Defeated Darth Vader! Select your next opponent<h2>");
             checkEnd();
         }
+//Luke is player against Vader--take away health from Luke if Vader is still alive; if luke goes negative or 0--loser
 
         if (vaderHP > 0) {
             lukeHP-=vaderAttack;
@@ -733,6 +788,7 @@ function attacked() {
 
 }
 
+//if character wins against all 3 enemies
 function checkEnd() {
     if (finished === 3) {
         $("#announcements").html("<h1>You've Defeated All of Your Enemies! May the Force be with You...</h1>")
