@@ -1,7 +1,7 @@
-var anakinHP = 125;
-var vaderHP = 220;
-var lukeHP = 165;
-var maulHP = 250;
+var anakinHP = 330;
+var vaderHP = 400;
+var lukeHP = 350;
+var maulHP = 375;
 var luke = 0;
 var anakin = 0;
 var maul = 0;
@@ -15,6 +15,7 @@ var attackIncrement = 0;
 var finished = 0;
 
 //create the categories and attack button:
+
 function setup () {
     $("#theForce").html("");
     $("#theForce2").html("<h2>Character Chosen:</h2>");
@@ -486,13 +487,13 @@ if (anakinHP > 0) {
         anakinAttack+=Math.floor(Math.random() * 10)
         maulHP-=anakinAttack
         if (maulHP > 0) {
-            var x = $("maulContainer");
-            var y = $("maul");
+            var x = $("#maulContainer");
+            var y = $("#maul");
             y.text("Darth Maul").append("<br> HP: ",maulHP)
             $("#theForce3").append(x);
         } else {
-            var x = $("maulContainer");
-            var y = $("maul");
+            var x = $("#maulContainer");
+            var y = $("#maul");
             y.text("Darth Maul").append("<br> HP: ",0)
             $("#theForce5").append(x);
             maul = 0;
@@ -539,7 +540,7 @@ if (anakinHP > 0) {
             checkEnd();
         }
 
-        if (maulHP > 0) {
+        if (vaderHP > 0) {
             anakinHP-=vaderAttack;
             if (anakinHP > 0) {
                 var x = $("#containAnakin");
@@ -638,13 +639,13 @@ if (anakinHP > 0) {
         vaderAttack+=Math.floor(Math.random() * 10)
         maulHP-=vaderAttack
         if (maulHP > 0) {
-            var x = $("maulContainer");
-            var y = $("maul");
+            var x = $("#maulContainer");
+            var y = $("#maul");
             y.text("Darth Maul").append("<br> HP: ",maulHP)
             $("#theForce3").append(x);
         } else {
-            var x = $("maulContainer");
-            var y = $("maul");
+            var x = $("#maulContainer");
+            var y = $("#maul");
             y.text("Darth Maul").append("<br> HP: ",0)
             $("#theForce5").append(x);
             maul = 0;
