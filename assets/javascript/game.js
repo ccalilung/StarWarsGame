@@ -333,7 +333,7 @@ function attacked() {
 //Luke is player against Anakin--take away health from Anakin; if Anakin goes 0 or negative, put him in defeated and prompt for next
     else if (luke === 1 && anakin === 2) {
         anakinHP-=lukeAttack
-        lukeAttack+=lukeAttack;
+        lukeAttack+=15;
         if (anakinHP > 0) {
             var x = $("#containAnakin")
             var y = $("#anakin")
@@ -373,7 +373,7 @@ if (anakinHP > 0) {
 
     else if (luke === 1 && vader === 2) {
         vaderHP-=lukeAttack
-        lukeAttack+=lukeAttack;
+        lukeAttack+=15;
         if (vaderHP > 0) {
             var x = $("#vaderContainer")
             var y = $("#vader")
@@ -415,7 +415,7 @@ if (anakinHP > 0) {
 
     else if (luke === 1 && maul === 2) {
         maulHP-=lukeAttack
-        lukeAttack+=lukeAttack;
+        lukeAttack+=15;
         if (maulHP > 0) {
             var x = $("#maulContainer");
                 var y = $("#maul")
@@ -453,7 +453,7 @@ if (anakinHP > 0) {
 
     else if (anakin === 1 && luke === 2) {
         lukeHP-=anakinAttack
-        anakinAttack+=anakinAttack;
+        anakinAttack+=10;
         if (lukeHP > 0) {
             var x = $("#lukeContainer")
             var y = $("#luke")
@@ -491,7 +491,7 @@ if (anakinHP > 0) {
 
     else if (anakin === 1 && maul === 2) {
         maulHP-=anakinAttack
-        anakinAttack+=anakinAttack;
+        anakinAttack+=10;
         if (maulHP > 0) {
             var x = $("#maulContainer");
             var y = $("#maul");
@@ -529,7 +529,7 @@ if (anakinHP > 0) {
 
     else if (anakin === 1 && vader === 2) {
         vaderHP-=anakinAttack
-        anakinAttack+=anakinAttack;
+        anakinAttack+=10;
         if (vaderHP > 0) {
             var x = $("#vaderContainer")
             var y = $("#vader")
@@ -567,7 +567,7 @@ if (anakinHP > 0) {
 
     else if (vader === 1 && luke === 2) {
         lukeHP-=vaderAttack
-        vaderAttack+=vaderAttack
+        vaderAttack+=30
         if (lukeHP > 0) {
             var x = $("#lukeContainer")
             var y = $("#luke")
@@ -605,7 +605,7 @@ if (anakinHP > 0) {
 
     else if (vader === 1 && anakin === 2) {
         anakinHP-=vaderAttack
-        vaderAttack+=vaderAttack
+        vaderAttack+=30
         if (anakinHP > 0) {
             var x = $("#containAnakin")
             var y = $("#anakin")
@@ -643,7 +643,7 @@ if (anakinHP > 0) {
 
     else if (vader === 1 && maul === 2) {
         maulHP-=vaderAttack
-        vaderAttack+=vaderAttack
+        vaderAttack+=30
         if (maulHP > 0) {
             var x = $("#maulContainer");
             var y = $("#maul");
@@ -681,7 +681,7 @@ if (anakinHP > 0) {
 
     else if (maul === 1 && luke === 2) {
        lukeHP-=maulAttack
-       maulAttack+=maulAttack
+       maulAttack+=25
         if (lukeHP > 0) {
             var x = $("#lukeContainer")
             var y = $("#luke")
@@ -719,7 +719,7 @@ if (anakinHP > 0) {
 
     else if (maul === 1 && anakin === 2) {
         anakinHP-=maulAttack
-        maulAttack+=maulAttack
+        maulAttack+=25
         if (anakinHP > 0) {
             var x = $("#containAnakin")
             var y = $("#anakin")
@@ -757,7 +757,7 @@ if (anakinHP > 0) {
 
     else if (maul === 1 && vader === 2) {
         vaderHP-=maulAttack
-        maulAttack+=maulAttack
+        maulAttack+=25
         if (vaderHP > 0) {
             var x = $("#vaderContainer")
             var y = $("#vader")
