@@ -14,17 +14,18 @@ var attackStart = Math.floor(Math.random() * 10);
 var attackIncrement = 0;
 var finished = 0;
 
-//create the categories and attack button:
+
+
 
 function setup () {
     $("#theForce").html("");
+    $("#announcements").html("");
     $("#theForce2").html("<h2>Character Chosen:</h2>");
     $("#theForce3").html("<h2>Your Opponent:</h2>");
     $("#theForce4").html("<h2>The Enemies:</h2>");
     $("#theForce5").html("<h2>Defeated Enemies:</h2>");
     var m = $("<button>")
-    m.attr("type","button");
-    m.attr("id","attack")
+    m.attr({type:"button",id:"attack"})
     m.addClass("action btn btn-danger my-2")
     m.text("Attack!")
     $("#putButtonHere").append(m);
@@ -404,7 +405,8 @@ if (anakinHP > 0) {
         
         } else {return vaderHP}
     }
-        
+
+//pattern continues as described. character === 1 is the player; character === 2 is the opponent
     
 
     else if (luke === 1 && maul === 2) {
