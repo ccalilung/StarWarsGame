@@ -1,8 +1,11 @@
-# unit-4-game
+# Star Wars Game
 
-This is the unit-4-game for the GWU Bootcamp May 2018 session. Game is for educational purposes only.
+This game is not for commercial use; it is for educational purposes only.
+Deployed Project on GitHub: https://ccalilung.github.io/StarWarsGame 
 
-Instructions: Select a character below. The other 3 will become the enemy team. Select a member of the enemy team. When
+Background: The challenge was to build a game where a person would select one Star Wars character out of 4 to fight the remaining 3. Each character has unique health and attack points. As the player attacks, the character's strength increases by a random amount. The game was coded using JavaScript and JQuery.
+
+Game Instructions: Select a character below. The other 3 will become the enemy team. Select a member of the enemy team. When
                     you click the "Attack" button, the enemy's Health Points (HP) will go down by a certain amount. If you
                     don't defeat them in that turn, they will have the opportunity to attack you and your HP will go down
                     as well. As you progress, your attacks get stronger. Once you defeat your opponent, that opponent will
