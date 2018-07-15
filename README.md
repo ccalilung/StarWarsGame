@@ -1,6 +1,7 @@
 # Star Wars Game
 
-This game is not for commercial use; it is for educational purposes only.
+This game is not for commercial use; it is an educational exercise in JavaScript/JQuery/HTML/CSS.
+
 Deployed Project on GitHub: https://ccalilung.github.io/StarWarsGame 
 
 Background: The challenge was to build a game where a person would select one Star Wars character out of 4 to fight the remaining 3. Each character has unique health and attack points. As the player attacks, the character's strength increases by a random amount. The game was coded using JavaScript and JQuery.
