@@ -1,6 +1,6 @@
 # Star Wars Game
 
-This game is not for commercial use; it is an educational exercise in JavaScript/JQuery/HTML/CSS.
+## NOTE: This game is not for commercial use; it is an educational exercise in JavaScript/JQuery/HTML/CSS.
 
 Deployed Project on GitHub: https://ccalilung.github.io/StarWarsGame 
 
